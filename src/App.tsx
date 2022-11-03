@@ -1,4 +1,6 @@
 import React from 'react';
+import { ErrorMessage } from './components/ErrorMessage';
+import { Loader } from './components/Loader';
 import { Product } from './components/Product';
 import { useProducts } from './hooks/products';
 
@@ -9,8 +11,8 @@ function App() {
     <div className="grid">
       <div className="col-4 col-offset-4">
         <div className="pt-5 text-xl">
-          {loading && <p className="text-center">Loading...</p>}
-          {error && <p className="text-center text-red-500">{error}</p>}
+          {loading && <Loader />}
+          {error && <ErrorMessage error={error} />}
           {products.map((product) => (
             <Product
               product={product}
