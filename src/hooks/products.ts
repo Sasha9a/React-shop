@@ -7,6 +7,10 @@ export const useProducts = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const addProduct = (product: ProductInterface) => {
+    setProducts((prev) => [...prev, product]);
+  };
+
   const fetchProducts = async () => {
     try {
       setError('');
@@ -25,5 +29,5 @@ export const useProducts = () => {
     fetchProducts();
   }, []);
 
-  return { products, error, loading };
+  return { products, error, loading, addProduct };
 };

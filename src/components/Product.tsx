@@ -29,7 +29,7 @@ export const Product = (props: ProductProps) => {
         <div className="scalein animation-duration-1000">
           <p>{props.product.description}</p>
           <p>
-            Rate: <span style={{ fontWeight: 'bold' }}>{props.product.rating.rate}</span>
+            Rate: <span style={{ fontWeight: 'bold' }}>{props.product?.rating?.rate}</span>
           </p>
         </div>
       )}
